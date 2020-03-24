@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Observable } from 'rxjs';
 import { Store, select } from '@ngrx/store';
-import { increment } from '../../../store/store';
-import calculatePrimeArray from '../../../util/prime-numbers'
+import { calculation } from '../../../store/actions/calculation.actions';
+
 @Component({
   selector: 'app-start-sections',
   templateUrl: './start-sections.component.html',
@@ -11,61 +11,18 @@ import calculatePrimeArray from '../../../util/prime-numbers'
 export class StartSectionsComponent implements OnInit {
 
   public counter$: Observable<any>;
-  sumOfFoundPrimes = 0;
 
-  // ******************************
-  index = 1000;
-  arrayLastPrimeNumber = 1000;
-  primeNumberFound;
-
-  controlPrimeNumbers = {
-    calculationTime: null,
-    sumOfFoundPrimes: 0,
-    primesNumberFound: [],
-    notifications: []
-  };
-  // ******************************
+  controlPrimeNumbers$;
 
   constructor(private store: Store<{ counterReducer: number }>) { }
 
-  ngOnInit(): void {
-    console.log(this.store)
-    this.counter$ = this.store.pipe(
-      select('counterReducer')
-    );
-    this.calculate();
-  }
+  ngOnInit(): void { }
 
   startCalculation() {
-    this.store.dispatch(increment());
-    this.calculate();
-  }
-
-
-
-
-
-  calculate() {
-    let index = 1000;
-    let array = [];
-
-    while(true) {
-      array = calculatePrimeArray(index);
-      const last1000Prime = array[this.arrayLastPrimeNumber - 1];
-
-      if (last1000Prime) {
-        break;
-      }
-      index += index;
-    }
-
-    this.sumOfFoundPrimes = array.reduce((sum, value) => sum + value, 0);
-    this.primeNumberFound = array[this.arrayLastPrimeNumber - 1];
-    this.arrayLastPrimeNumber += 1000;
-
-    this.controlPrimeNumbers.sumOfFoundPrimes = this.sumOfFoundPrimes;
-    this.controlPrimeNumbers.primesNumberFound.push(this.primeNumberFound);
-    this.controlPrimeNumbers.notifications.push(`Prime ${this.primeNumberFound} was found after 00:00:00`);
+    this.store.dispatch(calculation());
+    this.controlPrimeNumbers$ = this.store.pipe(
+      select('counterReducer')
+    );
   }
 
 }

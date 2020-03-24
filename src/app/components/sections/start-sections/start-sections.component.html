@@ -7,15 +7,13 @@
       </div>
 
       <div>
-        <div>Calculation time: {{ (counter$ | async)?.counter }} - {{ primeNumberFound }}
+        <div>Calculation time: {{ controlPrimeNumbers$?.primeNumberFound | async }}
         </div>
         <br/>
-        <div>Sum of found primes: {{ controlPrimeNumbers.sumOfFoundPrimes }}</div>
+        <div>Sum of found primes: {{ controlPrimeNumbers$?.sumOfFoundPrimes }}</div>
       </div>
 
     </mat-card>
 </div>
 
-{{ this.controlPrimeNumbers.primesNumberFound | json }}
-<br/>
-{{ this.controlPrimeNumbers.notifications | json }}
+{{ this.controlPrimeNumbers$ | async | json }}

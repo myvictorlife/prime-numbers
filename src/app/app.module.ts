@@ -11,7 +11,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MaterialModule } from './material/material.module';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { StoreModule } from '@ngrx/store';
-import { reducer as counterReducer } from './store/store';
+import { reducer as counterReducer } from './store/reducers/calculation.reducer';
 @NgModule({
   declarations: [
     AppComponent,
