@@ -9,7 +9,7 @@ import { NotificationsSectionsComponent } from './components/sections/notificati
 import { PrimeNumbersSectionsComponent } from './components/sections/prime-numbers-sections/prime-numbers-sections.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MaterialModule } from './material/material.module';
-
+import { FlexLayoutModule } from '@angular/flex-layout';
 @NgModule({
   declarations: [
     AppComponent,
@@ -22,7 +22,8 @@ import { MaterialModule } from './material/material.module';
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
-    MaterialModule
+    MaterialModule,
+    FlexLayoutModule
   ],
   providers: [],
   bootstrap: [AppComponent]
