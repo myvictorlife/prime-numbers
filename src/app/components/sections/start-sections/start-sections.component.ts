@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-
+import { Observable } from 'rxjs';
+import { Store, select } from '@ngrx/store';
+import { increment } from '../../../store/store';
 @Component({
   selector: 'app-start-sections',
   templateUrl: './start-sections.component.html',
@@ -7,9 +9,19 @@ import { Component, OnInit } from '@angular/core';
 })
 export class StartSectionsComponent implements OnInit {
 
-  constructor() { }
+  public counter$: Observable<any>;
+
+  constructor(private store: Store<{ counterReducer: number }>) { }
 
   ngOnInit(): void {
+    console.log(this.store)
+    this.counter$ = this.store.pipe(
+      select('counterReducer')
+    );
+  }
+
+  startCalculation() {
+    this.store.dispatch(increment());
   }
 
 }

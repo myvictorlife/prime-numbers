@@ -7,11 +7,11 @@
   <mat-card fxLayout="row" fxLayoutAlign="space-around center" fxFlex="55%">
 
       <div>
-          <button mat-raised-button color="primary">Start Calculation</button>
+      <button mat-raised-button (click)="startCalculation()" color="primary">Start Calculation</button>
       </div>
 
       <div>
-        <div>Calculation time: 00:00:00:00
+        <div>Calculation time: {{ (counter$ | async)?.counter }}
         </div>
         <br/>
         <div>Sum of found primes: 43124412</div>
@@ -19,4 +19,3 @@
 
     </mat-card>
 </div>
-

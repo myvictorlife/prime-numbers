@@ -10,6 +10,8 @@ import { PrimeNumbersSectionsComponent } from './components/sections/prime-numbe
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MaterialModule } from './material/material.module';
 import { FlexLayoutModule } from '@angular/flex-layout';
+import { StoreModule } from '@ngrx/store';
+import { reducer as counterReducer } from './store/store';
 @NgModule({
   declarations: [
     AppComponent,
@@ -23,7 +25,10 @@ import { FlexLayoutModule } from '@angular/flex-layout';
     AppRoutingModule,
     BrowserAnimationsModule,
     MaterialModule,
-    FlexLayoutModule
+    FlexLayoutModule,
+    StoreModule.forRoot({
+      counterReducer
+    })
   ],
   providers: [],
   bootstrap: [AppComponent]
