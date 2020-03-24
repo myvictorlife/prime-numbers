@@ -1,8 +1,4 @@
 
-
-
-
-
 <div style="margin: 1em;">
   <mat-card fxLayout="row" fxLayoutAlign="space-around center" fxFlex="55%">
 
@@ -11,11 +7,15 @@
       </div>
 
       <div>
-        <div>Calculation time: {{ (counter$ | async)?.counter }}
+        <div>Calculation time: {{ (counter$ | async)?.counter }} - {{ primeNumberFound }}
         </div>
         <br/>
-        <div>Sum of found primes: 43124412</div>
+        <div>Sum of found primes: {{ controlPrimeNumbers.sumOfFoundPrimes }}</div>
       </div>
 
     </mat-card>
 </div>
+
+{{ this.controlPrimeNumbers.primesNumberFound | json }}
+<br/>
+{{ this.controlPrimeNumbers.notifications | json }}
