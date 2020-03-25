@@ -1,0 +1,10 @@
+{
+  "Title" : "DSR Prime Numbers - PT",
+  "Primes" : {
+    "Title" : "Números Primos",
+    "CalculationTime" : "Tempo de cálculo:"
+  },
+  "Notifications" : {
+    "Title" : "Notificações"
+  }
+}

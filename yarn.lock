@@ -928,6 +928,18 @@
     rxjs "6.5.3"
     webpack-sources "1.4.3"
 
+"@ngx-translate/core@^12.1.2":
+  version "12.1.2"
+  resolved "https://registry.yarnpkg.com/@ngx-translate/core/-/core-12.1.2.tgz#0c6f24249953a79cfc2d581b2cd1b5d6d338d9db"
+  integrity sha512-ZudJsqIxTKlLmPoqK8gJY3UpMGujR0Xm7HfXL6AR79yGRS23QqpjAhMfx4v5qUCcHMmQ9/78bW8QJLfp31c7vQ==
+
+"@ngx-translate/http-loader@^4.0.0":
+  version "4.0.0"
+  resolved "https://registry.yarnpkg.com/@ngx-translate/http-loader/-/http-loader-4.0.0.tgz#8a555248ad4b7d513460fcec9da25b0447962f1d"
+  integrity sha512-x8LumqydWD7eX9yQTAVeoCM9gFUIGVTUjZqbxdAUavAA3qVnk9wCQux7iHLPXpydl8vyQmLoPQR+fFU+DUDOMA==
+  dependencies:
+    tslib "^1.9.0"
+
 "@schematics/angular@9.0.7":
   version "9.0.7"
   resolved "https://registry.yarnpkg.com/@schematics/angular/-/angular-9.0.7.tgz#e09ab998c2b3aa7269d91378b08a0fbca5037ea6"
@@ -6910,7 +6922,7 @@ rxjs@6.5.3:
   dependencies:
     tslib "^1.9.0"
 
-rxjs@^6.4.0, rxjs@~6.5.4:
+rxjs@^6.4.0, rxjs@^6.5.4:
   version "6.5.4"
   resolved "https://registry.yarnpkg.com/rxjs/-/rxjs-6.5.4.tgz#e0777fe0d184cec7872df147f303572d414e211c"
   integrity sha512-naMQXcgEo3csAEGvw/NydRA0fuS2nDZJiw1YUWFKU7aPPAPGZEsD4Iimit96qwCieH6y614MCLYwdkrWx7z/7Q==

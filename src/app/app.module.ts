@@ -12,6 +12,17 @@ import { MaterialModule } from './material/material.module';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { StoreModule } from '@ngrx/store';
 import { reducer as calculationReducer } from './store/reducers/calculation.reducer';
+
+// import ngx-translate and the http loader
+import {TranslateModule, TranslateLoader} from '@ngx-translate/core';
+import {TranslateHttpLoader} from '@ngx-translate/http-loader';
+import { HttpClient, HttpClientModule } from '@angular/common/http';
+
+// AoT requires an exported function for factories
+export function HttpLoaderFactory(http: HttpClient) {
+  return new TranslateHttpLoader(http);
+}
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -28,6 +39,15 @@ import { reducer as calculationReducer } from './store/reducers/calculation.redu
     FlexLayoutModule,
     StoreModule.forRoot({
       calculationReducer
+    }),
+    HttpClientModule,
+    TranslateModule.forRoot({
+      defaultLanguage: 'en',
+      loader: {
+          provide: TranslateLoader,
+          useFactory: HttpLoaderFactory,
+          deps: [HttpClient]
+      }
     })
   ],
   providers: [],

@@ -12,6 +12,7 @@ single-line command.
 2. Angular Material -  UI component infrastructure and Material Design components for mobile and desktop Angular web applications.
 3. NGRX - UI component infrastructure and Material Design components for mobile and desktop Angular web applications.
 4. date-fns - Provides the most comprehensive yet simple and consistent toolset for manipulating JavaScript dates in a browser & Node.js.
+5. ngx-translate = The internationalization (i18n) library for Angular.
 
 # Installation
 

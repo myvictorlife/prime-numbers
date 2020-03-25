@@ -1,7 +1,7 @@
 <mat-card>
 
     <mat-card-header fxLayout="row wrap" fxLayoutAlign="space-around center" >
-        <mat-card-title>Primes</mat-card-title>
+        <mat-card-title translate>Primes.Title</mat-card-title>
     </mat-card-header>
 
     <mat-card-content fxLayout="row wrap" fxLayoutAlign="center" class="primes-content">
@@ -13,11 +13,11 @@
 
             <div class="grid-container" *ngIf="primeNumberSelected && primeNumberSelected.primesNumber === prime.primesNumber">
               <div class="item1">
-                <h1>Primes</h1>
+                <h1>Primes.Title</h1>
                 {{primeNumberSelected.primesNumber}}
               </div>
               <div class="item2">
-                <h1>Calculation Time:</h1>
+                <h1 translate>Title.CalculationTime</h1>
                 {{primeNumberSelected.calculationTime}}
               </div>
             </div>
