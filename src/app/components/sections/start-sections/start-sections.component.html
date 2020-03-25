@@ -1,7 +1,6 @@
 
 <div style="margin: 1em;">
   <mat-card fxLayout="row" fxLayoutAlign="space-around center">
-
       <div>
       <button mat-raised-button (click)="startCalculation()" color="primary">Start Calculation</button>
       </div>
@@ -12,8 +11,5 @@
         <br/>
         <div>Sum of found primes: {{ (controlPrimeNumbers$ | async )?.controlPrimeNumbers?.sumOfFoundPrimes}}</div>
       </div>
-
     </mat-card>
 </div>
-
-{{ controlPrimeNumbers$ | async | json }}

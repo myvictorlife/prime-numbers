@@ -17,6 +17,7 @@ const featureReducer = (state = INITIAL_STATE, action) => {
       const object = primeNumberGenerator();
       const sumOfFoundPrimes = object.sumOfFoundPrimes;
       const primesNumberFound = state.controlPrimeNumbers.primesNumberFound.concat(object.primesNumberFound);
+      const notifications = state.notifications.concat(`Prime ${object.primesNumberFound} was found after 00:00:00`);
 
       return {
         ...state,
@@ -24,7 +25,8 @@ const featureReducer = (state = INITIAL_STATE, action) => {
           calculationTime: '',
           sumOfFoundPrimes,
           primesNumberFound
-        }
+        },
+        notifications
       }
       break;
     default:
