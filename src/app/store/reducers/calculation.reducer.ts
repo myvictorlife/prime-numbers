@@ -2,6 +2,7 @@ import { Action } from '@ngrx/store';
 import primeNumberGenerator from '../../util/prime-number-generator';
 import { PrimeNumbers } from '../model/prime-numbers';
 import dateConversion from '../../util/date-conversion';
+import { ActionTypes } from '../types/action-types';
 
 const INITIAL_STATE = {
   controlPrimeNumbers: {
@@ -14,7 +15,7 @@ const INITIAL_STATE = {
 
 const featureReducer = (state = INITIAL_STATE, action) => {
   switch (action.type) {
-    case 'START_CALCULATION':
+    case ActionTypes.START_CALCULATION:
 
       const beforeRunPrimeNumber = new Date();
       const object = primeNumberGenerator();
@@ -40,8 +41,7 @@ const featureReducer = (state = INITIAL_STATE, action) => {
           primesNumberFound
         },
         notifications
-      };
-      break;
+    };
     default:
      return {
        ... state

@@ -1,9 +1,6 @@
 
 import { createAction } from '@ngrx/store';
-
-enum ActionTypes {
-  START_CALCULATION = 'START_CALCULATION',
-}
+import {ActionTypes } from '../types/action-types';
 
 export const calculation = createAction(
   ActionTypes.START_CALCULATION
