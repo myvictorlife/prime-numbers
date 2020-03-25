@@ -21,15 +21,21 @@ const featureReducer = (state = INITIAL_STATE, action) => {
       const afterRunPrimeNumber = new Date();
 
       const sumOfFoundPrimes = object.sumOfFoundPrimes;
-      const primesNumberFound = state.controlPrimeNumbers.primesNumberFound.concat(object.primesNumberFound);
+      const calculationTime = dateConversion(beforeRunPrimeNumber, afterRunPrimeNumber);
 
-      const diffDate = dateConversion(beforeRunPrimeNumber, afterRunPrimeNumber);
-      const notifications = state.notifications.concat(`Prime ${object.primesNumberFound} was found after ${diffDate}`);
+      const primesNumberFound = state.controlPrimeNumbers.primesNumberFound.concat({
+        startDate: beforeRunPrimeNumber,
+        primesNumber: object.primesNumberFound,
+        endDate: afterRunPrimeNumber,
+        calculationTime
+      });
+
+      const notifications = state.notifications.concat(`Prime ${object.primesNumberFound} was found after ${calculationTime}`);
 
       return {
         ...state,
         controlPrimeNumbers: {
-          calculationTime: '',
+          calculationTime,
           sumOfFoundPrimes,
           primesNumberFound
         },

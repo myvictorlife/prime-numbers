@@ -5,6 +5,11 @@ import {
   differenceInMilliseconds,
 } from 'date-fns';
 
+/**
+ * Compare 2 dates and return the difference between them.
+ * Return "00:00:00:00" (hours, minutes, seconds and milliseconds)
+ */
+
 function pad(n) {
   return n < 10 ? '0' + n : n;
 }

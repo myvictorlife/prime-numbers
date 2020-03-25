@@ -9,6 +9,7 @@ import { PrimeNumbers } from '../../../store/model/prime-numbers';
 export class PrimeNumbersSectionsComponent implements OnInit {
 
   controlPrimeNumbers$;
+  primeNumberSelected: any = undefined;
 
   constructor(private store: Store<{ calculationReducer: PrimeNumbers }>) { }
 
@@ -16,6 +17,14 @@ export class PrimeNumbersSectionsComponent implements OnInit {
     this.controlPrimeNumbers$ = this.store.pipe(
       select('calculationReducer')
     );
+  }
+
+  selectPrimeNumber(primeNumber) {
+    if (this.primeNumberSelected && this.primeNumberSelected.primesNumber === primeNumber.primesNumber){
+      this.primeNumberSelected = null;
+    } else {
+      this.primeNumberSelected = primeNumber;
+    }
   }
 
 }
