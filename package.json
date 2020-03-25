@@ -1,6 +1,8 @@
 {
   "name": "prime-numbers",
-  "version": "0.0.0",
+  "version": "1.0.0",
+  "description": "The client application is an SPA to calculate prime numbers.",
+  "author": "Victor Cesar",
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
