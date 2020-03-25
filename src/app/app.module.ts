@@ -11,7 +11,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MaterialModule } from './material/material.module';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { StoreModule } from '@ngrx/store';
-import { reducer as counterReducer } from './store/reducers/calculation.reducer';
+import { reducer as calculationReducer } from './store/reducers/calculation.reducer';
 @NgModule({
   declarations: [
     AppComponent,
@@ -27,7 +27,7 @@ import { reducer as counterReducer } from './store/reducers/calculation.reducer'
     MaterialModule,
     FlexLayoutModule,
     StoreModule.forRoot({
-      counterReducer
+      calculationReducer
     })
   ],
   providers: [],

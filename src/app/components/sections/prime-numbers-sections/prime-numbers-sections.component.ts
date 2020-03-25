@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Store, select } from '@ngrx/store';
+import { PrimeNumbers } from '../../../store/model/prime-numbers';
 @Component({
   selector: 'app-prime-numbers-sections',
   templateUrl: './prime-numbers-sections.component.html',
@@ -9,11 +10,11 @@ export class PrimeNumbersSectionsComponent implements OnInit {
 
   controlPrimeNumbers$;
 
-  constructor(private store: Store<{ counterReducer: number }>) { }
+  constructor(private store: Store<{ calculationReducer: PrimeNumbers }>) { }
 
   ngOnInit(): void {
     this.controlPrimeNumbers$ = this.store.pipe(
-      select('counterReducer')
+      select('calculationReducer')
     );
   }
 
