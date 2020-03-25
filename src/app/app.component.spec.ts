@@ -7,15 +7,19 @@ import { NotificationsSectionsComponent } from './components/sections/notificati
 import { PrimeNumbersSectionsComponent } from './components/sections/prime-numbers-sections/prime-numbers-sections.component';
 import { StoreModule } from '@ngrx/store';
 import { reducer as calculationReducer } from './store/reducers/calculation.reducer';
+import { TranslateModule, TranslateLoader, TranslateFakeLoader, TranslateService } from '@ngx-translate/core';
+import { HttpClientModule } from '@angular/common/http';
 
 describe('AppComponent', () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       imports: [
         RouterTestingModule,
+        HttpClientModule,
         StoreModule.forRoot({
           calculationReducer
-        })
+        }),
+        TranslateModule.forRoot()
       ],
       declarations: [
         AppComponent,
@@ -23,7 +27,7 @@ describe('AppComponent', () => {
         StartSectionsComponent,
         NotificationsSectionsComponent,
         PrimeNumbersSectionsComponent
-      ],
+      ]
     }).compileComponents();
   }));
 

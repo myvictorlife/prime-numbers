@@ -1,5 +1,11 @@
 {
   "Title" : "DSR Prime Numbers - EN",
+  "StartSections" : {
+    "Title" : "Start Sections",
+    "StartCalculation" : "Start Calculation",
+    "CalculationTime" : "Calculation Time",
+    "SumOfFoundPrimes" : "Sum of found primes"
+  },
   "Primes" : {
     "Title" : "Primes",
     "CalculationTime" : "Calculation Time:"

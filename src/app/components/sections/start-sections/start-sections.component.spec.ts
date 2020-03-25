@@ -3,6 +3,8 @@ import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { StartSectionsComponent } from './start-sections.component';
 import { reducer as calculationReducer } from '../../../store/reducers/calculation.reducer';
 import { StoreModule } from '@ngrx/store';
+import { TranslateModule } from '@ngx-translate/core';
+
 
 describe('StartSectionsComponent', () => {
   let component: StartSectionsComponent;
@@ -14,7 +16,8 @@ describe('StartSectionsComponent', () => {
       imports: [
         StoreModule.forRoot({
           calculationReducer
-        })
+        }),
+        TranslateModule.forRoot()
       ]
     })
     .compileComponents();
