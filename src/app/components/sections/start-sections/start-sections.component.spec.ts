@@ -1,6 +1,8 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { StartSectionsComponent } from './start-sections.component';
+import { reducer as calculationReducer } from '../../../store/reducers/calculation.reducer';
+import { StoreModule } from '@ngrx/store';
 
 describe('StartSectionsComponent', () => {
   let component: StartSectionsComponent;
@@ -8,7 +10,12 @@ describe('StartSectionsComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ StartSectionsComponent ]
+      declarations: [ StartSectionsComponent ],
+      imports: [
+        StoreModule.forRoot({
+          calculationReducer
+        })
+      ]
     })
     .compileComponents();
   }));

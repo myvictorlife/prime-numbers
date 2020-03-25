@@ -1,6 +1,8 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { NotificationsSectionsComponent } from './notifications-sections.component';
+import { reducer as calculationReducer } from '../../../store/reducers/calculation.reducer';
+import { StoreModule } from '@ngrx/store';
 
 describe('NotificationsSectionsComponent', () => {
   let component: NotificationsSectionsComponent;
@@ -8,7 +10,12 @@ describe('NotificationsSectionsComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ NotificationsSectionsComponent ]
+      declarations: [ NotificationsSectionsComponent ],
+      imports: [
+        StoreModule.forRoot({
+          calculationReducer
+        })
+      ]
     })
     .compileComponents();
   }));

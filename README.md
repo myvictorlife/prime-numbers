@@ -4,8 +4,7 @@
 ---
 ## Requirements
 
-The source code of the application should be in public repo on github or sent as a zip archive
-via email. The application should start with &#39;npm start&#39;, &#39;docker run&#39;, &#39;docker-compose up&#39; or any
+The application should start with &#39;npm start&#39;, &#39;docker run&#39;, &#39;docker-compose up&#39; or any
 single-line command.
 
 # Plugins
